@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai wala</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            width: 60%;
+            height:600px;
+            border: 3px solid black;
+            background-color: rgb(101, 234, 101);
+            margin: auto;
+            padding: 20px;
+            outline: 1px solid black;
+            outline-offset: 3px;
+        }
+        h1{
+            text-align: center;
+            font-weight: bolder;
+            position: relative;
+            
+        }
+        .subbox{
+            width:100%;
+            height: 300px;
+            border: 2px solid blaCK;
+            background-image: linear-gradient(to right, rgba(244, 192, 192, 0.858), rgb(227, 62, 62)); 
+            
+            padding: 20px;
+            align-content: center;
+
+        }
+        form{
+            text-align: center;
+            font-weight: bold;
+            font-size: large;
+
+        }
+        input[type=text]{
+            padding: 2px;
+        }
+        input[type=submit]{
+            padding: 5px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 40%;
+            
+        }
+        input[type=submit]:focus{
+            background-color: darkgray;
+
+        }
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            float: left;
+            margin-left: 150px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        
+    <h1>
+        Chai Wale !
+    </h1>
+    
+    <br>
+    <br>
+    <div class="subbox">
+        <form action="">
+            <label for="">Customer Name </label>
+            <input type="text" name="cname" id="cname" >
+            <br><br>
+            
+            <label for="">Type :</label>&nbsp; &nbsp;
+            <div id="rates">
+                <input type="radio" id="r1" name="rate" value="regular"> Regular
+                <input type="radio" id="r2" name="rate" value="kulhad" checked="checked"> Kulhad(Extra Rs 10)
+              </div>
+            <br><br>
+            <label for="">Chai :</label>&nbsp;
+            <select name="chai" id="myselect">
+                <option value="adrak">Adrak (Rs 40)</option>
+                <option value="rose">Rose (Rs 40)</option>
+                <option value="choco">Choclate (Rs 40)</option>
+                <option value="elachi">Elachi (Rs 50)</option>
+            </select>
+            <br><br><br><br>
+            <label for="">Quantity</label>
+            &nbsp;
+            <input type="number" name="quantity" id="quantity">
+            <br><br><br>
+            <input type="submit" value="Submit Order" class="btn" onclick="costfun()">
+
+        </form>
+
+    </div>
+</div>
+    <script>
+        function costfun()
+        {
+            var c=document.getElementById("cname").value;
+            var x=document.getElementById("myselect").value;
+            var cost1;
+            switch(x)
+            {
+                case "adrak":
+                    cost1=40;
+                    break;
+                case "rose":
+                cost1=40;
+                break;
+
+                case "choco":
+                    cost1=40;
+                    break;
+                
+                case "elachi":
+                cost1=50;
+                break;
+
+            }
+            var cost2;
+            
+            
+            if(document.getElementById('r1').checked)
+            {
+                cost2=0;
+            }
+            if(document.getElementById('r2').checked)
+            {
+                cost2=10;
+            } 
+            
+            var q=document.getElementById("quantity").value;
+            var cost=cost1+cost2;
+
+            alert("Dear " + c + " ! Your bill amount is Rs" + q*cost);
+        }
+
+    </script>
+
+</body>
+</html>
